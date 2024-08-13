@@ -1,0 +1,84 @@
+﻿@model Emp
+
+@TempData["msg"]
+@TempData["successMsg"]
+@ViewData["successMsg"]
+@ViewBag.msg
+
+
+<form method="post">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Id</label>
+        <input type="text" asp-for="Id" class="form-control" id="exampleInputEmail1" placeholder="Enter Id">
+        <span asp-validation-for="Id" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Name</label>
+        <input type="text" asp-for="Name" class="form-control" id="exampleInputEmail1" placeholder="Enter name">
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Salary</label>
+        <input type="text" asp-for="salary" class="form-control" id="exampleInputEmail1"  placeholder="Enter salary">
+        <span asp-validation-for="salary" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">Email</label>
+        <input type="text" asp-for="email" class="form-control" id="exampleInputEmail1" placeholder="Enter emailaddress">
+        <span asp-validation-for="email" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">Contact</label>
+        <input type="text" asp-for="contactNumber" class="form-control" id="exampleInputEmail1" placeholder="Enter contactnumber">
+        <span asp-validation-for="contactNumber" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">PanCard</label>
+        <input type="text" asp-for="panCard" class="form-control" id="exampleInputEmail1" placeholder="Enter PandCard number">
+        <span asp-validation-for="panCard" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">URL</label>
+        <input type="text" asp-for="URL" class="form-control" id="exampleInputEmail1" placeholder="Enter Enter url">
+        <span asp-validation-for="URL" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">CreditCard</label>
+        <input type="text" asp-for="creditCard" class="form-control" id="exampleInputEmail1" placeholder="Enter creditCard">
+        <span asp-validation-for="creditCard" class="text-danger"></span>
+    </div>
+    
+    <br />
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+@if(Model != null)
+{
+
+    <br />
+    @Model.Id
+    <br />
+    @Model.Name
+    <br />
+    @Model.salary
+    <br />
+    @Model.email
+    <br />
+    @Model.contactNumber
+    <br />
+    @Model.panCard
+    <br />
+    @Model.URL
+    <br />
+    @Model.creditCard
+    <br />
+}
+
+ @section scripts{
+    <partial name="_ValidationScriptsPartial"></partial>
+ }
